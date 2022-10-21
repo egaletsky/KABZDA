@@ -19,7 +19,6 @@ export function Rating(props:RatingPropsType) {
 
         </div>);
 
-
 }
 
 type StarPropsType ={
