@@ -5,9 +5,6 @@ type RatingPropsType = {
 }
 
 export function Rating(props:RatingPropsType) {
-   debugger
-
-
 
     return (
         <div>
@@ -25,7 +22,7 @@ type StarPropsType ={
     selected:boolean
 }
 function Star(props: StarPropsType) {
-debugger
+
     if (props.selected === true) {
         return <span><b>star </b></span>
     } else {
