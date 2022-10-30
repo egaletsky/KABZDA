@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import './components/Accordion/Accordion';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
 
 function App() {
-    console.log('1')
+
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+
+
     return (
         <div className="App">
 
@@ -34,7 +38,8 @@ function App() {
             <UncontrolledAccordion titleValue = {'Menu'}/>
             <UncontrolledAccordion titleValue = {'Users'}/>
             <UncontrolledRating/>
-            <Rating stars ={4}/>
+
+            <Rating stars={ratingValue} onClick={setRatingValue}/>
 
 
         </div>
