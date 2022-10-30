@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {RatingValueType} from '../Rating/Rating';
 
 type UncontrolledAccordionPropsType = {
     titleValue: string
@@ -29,6 +30,7 @@ function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 type AccordionTitlePropsType = {
     title: string
     onClick:()=> void
+
 }
 
 
