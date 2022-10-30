@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
 import './components/Accordion/Accordion';
-import Accordion from "./components/Accordion/Accordion";
+import Accordion from './components/Accordion/Accordion';
 import {Rating, RatingValueType} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
     return (
         <div className="App">
 
-{/*            <PageTitle title ={'Hello, samurai!'}/>
+            {/*            <PageTitle title ={'Hello, samurai!'}/>
          Article 1
             <Rating stars ={3}/>
           Article 222
@@ -31,16 +32,19 @@ function App() {
             <Rating stars ={5}/>*/}
 
 
+            {/*<OnOff on={switchOn} onChange={(on)=>{setSwitchOn(on)}} ></OnOff>*/}
+            <UncontrolledOnOff onChange ={setSwitchOn}/>{switchOn.toString()}
 
-            <OnOff></OnOff>
-            <OnOff></OnOff>
-            <OnOff></OnOff>
-            <Accordion titleValue = {'Menu'}
-                       collapsed = {accordionCollapsed}
-                       onClick={setAccordionCollapsed}
+            {/*<OnOff></OnOff>*/}
+            {/*<OnOff></OnOff>*/}
+            <Accordion titleValue={'MenuOne'}
+                       collapsed={accordionCollapsed}
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}
             />
-            <UncontrolledAccordion titleValue = {'Menu'}/>
-            <UncontrolledAccordion titleValue = {'Users'}/>
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
             <UncontrolledRating/>
 
             <Rating stars={ratingValue} onClick={setRatingValue}/>
@@ -49,8 +53,9 @@ function App() {
         </div>
     );
 }
-type PageTitleProps ={
-    title:string
+
+type PageTitleProps = {
+    title: string
 }
 
 function PageTitle(props: PageTitleProps) {
@@ -60,7 +65,6 @@ function PageTitle(props: PageTitleProps) {
 
     );
 }
-
 
 
 export default App;
