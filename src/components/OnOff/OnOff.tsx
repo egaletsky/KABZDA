@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
-type PropsType = {
+export type OnOffPropsType = {
     on: boolean
     onChange:(on:boolean)=>void
 }
 
 const onStyle = {}
 
-export const OnOff = (props: PropsType) => {
+export const OnOff = (props: OnOffPropsType) => {
 
 
 

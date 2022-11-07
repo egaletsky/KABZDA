@@ -1,13 +1,16 @@
 import React from 'react';
 
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
+    /**
+     * Title of lists
+     */
     titleValue: string
     collapsed: boolean
     onChange: () => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export const Accordion = (props: AccordionPropsType) => {
 
     return (
         <div>
@@ -42,6 +45,9 @@ function Accordion(props: AccordionPropsType) {
 }*/
 
 type AccordionTitlePropsType = {
+    /**
+     * Title of lists
+     */
     title: string
     onChange: () => void
 
@@ -65,5 +71,3 @@ function AccordionBody() {
 
     </ul>;
 }
-
-export default Accordion;
