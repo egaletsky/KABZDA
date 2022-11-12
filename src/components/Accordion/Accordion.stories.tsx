@@ -14,6 +14,7 @@ export const Primary = Template.bind({});
 Primary.args = {
     titleValue: 'MenuOne',
     collapsed: false,
+    items:['qqqq','aaaa','zzzz']
 
 };
 

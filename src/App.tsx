@@ -16,6 +16,8 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
+
+    let [menuItems, setMenuItems] = useState<string[]>(['qqqq','aaaa','zzzz'])
     return (
         <div className="App">
 
@@ -44,6 +46,7 @@ function App() {
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}
+                       items ={menuItems}
             />
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledAccordion titleValue={'Users'}/>
