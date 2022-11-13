@@ -52,8 +52,8 @@ type AccordionBodyPropsType = {
 
 function AccordionBody(props:AccordionBodyPropsType) {
     return <ul>
-        {props.items.map(el =>{
-            return <li>{el}</li>
+        {props.items.map((el,index) =>{
+            return <li key ={index}>{el}</li>
         })}
     </ul>;
 }
