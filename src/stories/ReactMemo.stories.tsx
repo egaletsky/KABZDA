@@ -12,6 +12,8 @@ const NewMessagesCounter = (props: any) => {
 const UsersSecret = (props: { users: string[] }) => {
     console.log('USERS')
     return <div>{props.users.map((u, i) => <div key={i}>{u}</div>)}</div>
+
+
 }
 
 const Users = React.memo(UsersSecret)
