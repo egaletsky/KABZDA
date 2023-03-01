@@ -19,7 +19,7 @@ export const Example1 = () => {
     const [counter, setCounter] = useState(generateData)
 
     const changer = (state:number)=> {
-        debugger
+
         return state + 1
     }
 
