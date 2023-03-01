@@ -62,16 +62,17 @@ export const SetTimeoutExample = () => {
     //     console.log('UseEffect first render and every counter change')
     //     window.alert(counter.toString())
     // },[counter])
-
-    setTimeout(()=>{
-        window.alert(counter.toString())
-    }, 2500)
+     useEffect(()=> {
+         setInterval(() => {
+             setCounter((state)=>state + 1)
+         }, 1000)
+     },[])
 
     return (
         <>
-            Hello, {counter}
-            <button onClick={() => setFake(fake + 1)}>fake++</button>
-            <button onClick={() => setCounter(counter + 1)}>counter++</button>
+            Hello, counter: {counter} - fake: {fake}
+            {/*<button onClick={() => setFake(fake + 1)}>fake++</button>*/}
+            {/*<button onClick={() => setCounter(counter + 1)}>counter++</button>*/}
         </>
     )
 
